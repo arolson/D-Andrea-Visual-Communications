@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="D_Andrea_Visual_Communications" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQN-G7-LUL">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBg-1U-aVI">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="Phc-6G-szV"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Item" image="Menu" id="ZUK-p3-6jX">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="menuAction:" destination="BYZ-38-t0r" id="IDP-ol-Hn7"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="0LY-k8-wAL"/>
+                                    <barButtonItem title="Item" style="plain" id="GUk-XI-ShM">
+                                        <view key="customView" contentMode="scaleToFill" id="nkq-td-xGd">
+                                            <rect key="frame" x="67" y="12.5" width="240" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u2F-HX-pFU"/>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="u2F-HX-pFU" secondAttribute="trailing" id="4M6-oL-tmc"/>
+                                                <constraint firstAttribute="bottom" secondItem="u2F-HX-pFU" secondAttribute="bottom" id="K0Z-8R-Vko"/>
+                                                <constraint firstItem="u2F-HX-pFU" firstAttribute="leading" secondItem="nkq-td-xGd" secondAttribute="leading" id="Rmt-Ss-g2k"/>
+                                                <constraint firstItem="u2F-HX-pFU" firstAttribute="top" secondItem="nkq-td-xGd" secondAttribute="top" constant="10" id="jAf-3y-6cu"/>
+                                            </constraints>
+                                        </view>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="yUx-ut-NNK"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SBg-1U-aVI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="60F-rI-Tyd"/>
+                            <constraint firstItem="NQN-G7-LUL" firstAttribute="top" secondItem="SBg-1U-aVI" secondAttribute="bottom" id="Pa9-5o-xt6"/>
+                            <constraint firstAttribute="trailing" secondItem="NQN-G7-LUL" secondAttribute="trailing" id="Yof-9F-FDZ"/>
+                            <constraint firstItem="NQN-G7-LUL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bQV-mw-8eU"/>
+                            <constraint firstItem="SBg-1U-aVI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cK1-X3-mDX"/>
+                            <constraint firstAttribute="trailing" secondItem="SBg-1U-aVI" secondAttribute="trailing" id="n51-5Z-gHR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NQN-G7-LUL" secondAttribute="bottom" id="xN9-Rb-2Aj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Amc-yI-fRo">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="Menu" id="iQs-aP-zEq">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="menuAction:" destination="BYZ-38-t0r" id="yrF-Uq-5Il"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="ZUK-p3-6jX" id="zvH-av-Aiv"/>
+                        <outlet property="presentingView" destination="NQN-G7-LUL" id="ofr-qi-XpO"/>
+                        <outlet property="titleBarImage" destination="u2F-HX-pFU" id="NZR-5a-mGw"/>
+                        <outlet property="titleView" destination="nkq-td-xGd" id="ON5-kv-XNr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776.79999999999995" y="-561.76911544227892"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Menu" width="16" height="16"/>
+    </resources>
+</document>
