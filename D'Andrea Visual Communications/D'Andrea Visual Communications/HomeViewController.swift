@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  HomeViewController.swift
 //  D'Andrea Visual Communications
 //
 //  Created by Andrew Olson on 10/24/16.
@@ -8,19 +8,41 @@
 
 import UIKit
 //Note to self turned off screen orientation
-class MainViewController: UIViewController {
+class HomeViewController: UIViewController {
     
+    //MARK: Inset Views
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var presentingView: UIView!
+    @IBOutlet weak var addressView: UIView!
+    
+    
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var titleBarImage: UIImageView!
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     var menu: MenuViewController!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("View Did Load: \n \n")
         setTitleIcon()
+        let addressText = "6100 Gateway Drive \nCypress, CA 90630 \n(714) 947-8444"
+        textView.text = addressText
+    }
+    override func viewWillAppear(_ animated: Bool) {
+
+        addContentToView()
+    }
+    func addContentToView()
+    {
+        let vc: ContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
+        vc.topString = "D'Andrea Visual \nCommunications "
+        vc.image = UIImage(named: "Building")
+        
+        vc.view.frame = contentView.frame
+        
+        contentView.addSubview(vc.view)
     }
     
     @IBAction func menuAction(_ sender: AnyObject) {
